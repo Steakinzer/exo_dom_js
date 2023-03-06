@@ -65,3 +65,50 @@ cardsss.forEach(function(card) {
 
   editbtn.addEventListener("mouseenter",changesize)
 })
+
+// Fonction 7
+
+let turnover = function(){
+  let container = document.querySelector("body > main > div > div > div")
+  let lastcard = document.querySelector("body > main > div > div > div > div:nth-child(6)")
+  let firstcard = document.querySelector("body > main > div > div > div > div:nth-child(1)")
+  container.insertBefore(lastcard, firstcard )
+}
+
+let turnbutton = document.querySelector("body > main > section > div > p > a.btn.btn-secondary.my-2")
+turnbutton.addEventListener("click", turnover)
+
+
+// Fonction 8
+let reverse = function () {
+  let container1 = document.querySelector("body > main > div > div > div")
+  let lastcard1 = document.querySelector("body > main > div > div > div > div:nth-child(6)")
+  let firstcard1 = document.querySelector("body > main > div > div > div > div:nth-child(1)")
+  container1.insertBefore(firstcard1,lastcard1.nextSibling)
+}
+
+let reversebutton = document.querySelector("body > main > section > div > p > a.btn.btn-primary.my-2")
+reversebutton.href = "#"
+reversebutton.addEventListener("click",reverse)
+
+// Fonction 9
+
+let navfocus = document.querySelector(".navbar-brand")
+let borderr = function() {
+  navfocus.style.color = navfocus.style.color === "red"? "white":"red"
+}
+navfocus.addEventListener("click",borderr)
+
+let allbody = document.querySelector("body")
+
+
+  document.addEventListener("keypress", function(e){
+    if (e.key === "a" && navfocus.style.color === "red")
+    allbody.className = "col-4"
+    else if (e.key === "y" && navfocus.style.color === "red")
+    allbody.className = "container-fluid col-4"
+    else if (e.key === "p" && navfocus.style.color === "red")
+    allbody.className = "offset-md-8"
+    else if (e.key === "b" && navfocus.style.color === "red")
+    allbody.className = ""
+  })
