@@ -102,13 +102,14 @@ navfocus.addEventListener("click",borderr)
 let allbody = document.querySelector("body")
 
 
-  document.addEventListener("keypress", function(e){
-    if (e.key === "a" && navfocus.style.color === "red")
-    allbody.className = "col-4"
-    else if (e.key === "y" && navfocus.style.color === "red")
-    allbody.className = "container-fluid col-4"
-    else if (e.key === "p" && navfocus.style.color === "red")
-    allbody.className = "offset-md-8"
-    else if (e.key === "b" && navfocus.style.color === "red")
-    allbody.className = ""
+  document.addEventListener("keyup", function(e){
+    if (navfocus.style.color === "red")
+      if (e.key === "a" )
+      allbody.className = "col-4"
+      else if (e.key === "y")
+      allbody.className = "container-fluid col-4"
+      else if (e.key === "p")
+      allbody.className = "offset-md-8"
+      else if (e.key === "b")
+      allbody.className = ""
   })
